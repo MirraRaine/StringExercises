@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>netstandard2.0</TargetFramework>
+	</PropertyGroup>
+
+	<!--required for  text with string builder performance considerations-->
+	<!--<ItemGroup>
+		<PackageReference Include="MSTest.Extensions.ObjectPool" Version="5.0.4" />
+	</ItemGroup>-->
+	
+	<ItemGroup>
+		<PackageReference Include="BenchmarkDotNet" Version="0.13.12" />
+		<PackageReference Include="Microsoft.Extensions.ObjectPool" Version="8.0.1" />
+		<PackageReference Include="MSTest.TestFramework" Version="3.1.1" />
+		<PackageReference Include="System.Memory" Version="4.5.5" />
+	</ItemGroup>
+
+</Project>
