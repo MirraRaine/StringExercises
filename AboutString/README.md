@@ -18,9 +18,19 @@ The class, aptly named “String Manipulation in C#: Best Practices,” provided
 
 During the course, I crafted several custom classes to explore string manipulation techniques. Here are a few examples:
 
-TODO
+1. CompareStrings
+2. ConcatenateAndFormatStrings
+3. DeclareChars
+4. DeclareStrings
+5. EncodeStrings
+6. EqualityStrings
+7. FormatAsSrrings
+8. ModifyStrings
+9. ParseStrings
+10. SearchStrings
+11. SortStrings
 
-## Tips from the Course
+## A Few Tips from the Course
 
 IComparable and IComparable<T> define a method that a value type or class can implement to allow ordering and sorting of instances. String can be sorted within a collection.
 You should use comparison methods for sorting strings but not for checking equality.
@@ -31,9 +41,7 @@ There are 3 modes of comparing strings (StringComparison enum)
 
 1. Ordinal (OrdinalIgnoreCase) -> compare strings strictly based on the unicode values of their characters. Characters are iterated to check for equality of characters  the same index in both strings. Used when case senitivity is not required. Prefer ordinal as a safe default for culture-agnostic comparisons. Ordinal achieve the best performance.
 2. CurrentCulture (CurrentCultureIgnoreCase). Applies conventions from the culture under which code is running. Culture may define rules for sorting and comparing characters. Consider it for comparisons of strings which are presented in the UI
-3. InvariantCulture (InvariantCultureIgnoreCase). Less common choice. Compares strings using a consistent culture. The difference from current culture is that, as the name suggests, the culture remains consistent across time, regardless of configuration changes to the runtime or the operating system. It uses rules associated with the English language but not specific to particular country or region. It is most useful for parsing and storing dates and numbers in a culture-independent format
-
-TODO
+3. InvariantCulture (InvariantCultureIgnoreCase). Less common choice. Compares strings using a consistent culture. The difference from current culture is that, as the name suggests, the culture remains consistent across time, regardless of configuration changes to the runtime or the operating system. It uses rules associated with the English language but not specific to particular country or region. It is most useful for parsing and storing dates and numbers in a culture-independent format.
 
 ## Conslusion
 Steve Gordon’s course not only enhanced my understanding of C# string manipulation but also inspired me to adopt best practices in my own code. Whether you’re a beginner or an experienced developer, consider adding this course to your learning journey. Happy coding! 

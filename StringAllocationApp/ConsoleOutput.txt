@@ -1,0 +1,145 @@
+﻿// Validating benchmarks:
+// ***** BenchmarkRunner: Start   *****
+// ***** Found 6 benchmark(s) in total *****
+// ***** Building 1 exe(s) in Parallel: Start   *****
+// ...
+// ***** Done, took 00:00:10 (10.93 sec)   *****
+// Found 6 benchmarks:
+//   StringBenchmarks.NoBuilder: DefaultJob
+//   StringBenchmarks.Builder: DefaultJob
+//   StringBenchmarks.PooledBuilder: DefaultJob
+//   StringBenchmarks.StackAllocated: DefaultJob
+//   StringBenchmarks.ArrayPool: DefaultJob
+//   StringBenchmarks.StringCreate: DefaultJob
+
+Setup power plan (GUID: 8c5e7fda-e8bf-4a96-9a85-a6e23a8c635c FriendlyName: High performance)
+// **************************
+// ...
+
+// ***** BenchmarkRunner: Finish  *****
+
+// * Detailed results *
+StringBenchmarks.NoBuilder: DefaultJob
+Runtime = .NET 5.0.17 (5.0.1722.21314), X64 RyuJIT AVX2; GC = Concurrent Workstation
+Mean = 542.620 us, StdErr = 2.212 us (0.41%), N = 14, StdDev = 8.275 us
+Min = 531.341 us, Q1 = 538.195 us, Median = 540.296 us, Q3 = 546.579 us, Max = 562.057 us
+IQR = 8.384 us, LowerFence = 525.618 us, UpperFence = 559.156 us
+ConfidenceInterval = [533.285 us; 551.955 us] (CI 99.9%), Margin = 9.335 us (1.72% of Mean)
+Skewness = 0.8, Kurtosis = 2.79, MValue = 2
+-------------------- Histogram --------------------
+[526.834 us ; 542.751 us) | @@@@@@@@@
+[542.751 us ; 554.589 us) | @@@@
+[554.589 us ; 566.563 us) | @
+---------------------------------------------------
+
+StringBenchmarks.Builder: DefaultJob
+Runtime = .NET 5.0.17 (5.0.1722.21314), X64 RyuJIT AVX2; GC = Concurrent Workstation
+Mean = 82.284 us, StdErr = 0.350 us (0.43%), N = 15, StdDev = 1.357 us
+Min = 80.339 us, Q1 = 81.386 us, Median = 82.217 us, Q3 = 83.294 us, Max = 85.335 us
+IQR = 1.908 us, LowerFence = 78.523 us, UpperFence = 86.157 us
+ConfidenceInterval = [80.833 us; 83.735 us] (CI 99.9%), Margin = 1.451 us (1.76% of Mean)
+Skewness = 0.56, Kurtosis = 2.38, MValue = 2
+-------------------- Histogram --------------------
+[79.617 us ; 82.327 us) | @@@@@@@@@
+[82.327 us ; 84.041 us) | @@@@@
+[84.041 us ; 86.057 us) | @
+---------------------------------------------------
+
+StringBenchmarks.PooledBuilder: DefaultJob
+Runtime = .NET 5.0.17 (5.0.1722.21314), X64 RyuJIT AVX2; GC = Concurrent Workstation
+Mean = 67.795 us, StdErr = 0.348 us (0.51%), N = 20, StdDev = 1.558 us
+Min = 65.764 us, Q1 = 66.632 us, Median = 67.653 us, Q3 = 68.610 us, Max = 70.423 us
+IQR = 1.978 us, LowerFence = 63.666 us, UpperFence = 71.577 us
+ConfidenceInterval = [66.442 us; 69.148 us] (CI 99.9%), Margin = 1.353 us (2.00% of Mean)
+Skewness = 0.38, Kurtosis = 1.78, MValue = 2
+-------------------- Histogram --------------------
+[65.652 us ; 67.159 us) | @@@@@@@@@
+[67.159 us ; 68.693 us) | @@@@@@
+[68.693 us ; 70.498 us) | @@@@@
+---------------------------------------------------
+
+StringBenchmarks.ArrayPool: DefaultJob
+Runtime = .NET 5.0.17 (5.0.1722.21314), X64 RyuJIT AVX2; GC = Concurrent Workstation
+Mean = 66.875 us, StdErr = 0.282 us (0.42%), N = 13, StdDev = 1.016 us
+Min = 64.770 us, Q1 = 66.200 us, Median = 66.885 us, Q3 = 67.481 us, Max = 68.557 us
+IQR = 1.281 us, LowerFence = 64.278 us, UpperFence = 69.404 us
+ConfidenceInterval = [65.658 us; 68.091 us] (CI 99.9%), Margin = 1.217 us (1.82% of Mean)
+Skewness = -0.26, Kurtosis = 2.29, MValue = 2
+-------------------- Histogram --------------------
+[64.203 us ; 65.756 us) | @
+[65.756 us ; 69.124 us) | @@@@@@@@@@@@
+---------------------------------------------------
+
+StringBenchmarks.StackAllocated: DefaultJob
+Runtime = .NET 5.0.17 (5.0.1722.21314), X64 RyuJIT AVX2; GC = Concurrent Workstation
+Mean = 56.361 us, StdErr = 0.276 us (0.49%), N = 18, StdDev = 1.171 us
+Min = 54.691 us, Q1 = 55.253 us, Median = 56.373 us, Q3 = 57.455 us, Max = 58.694 us
+IQR = 2.203 us, LowerFence = 51.948 us, UpperFence = 60.760 us
+ConfidenceInterval = [55.267 us; 57.455 us] (CI 99.9%), Margin = 1.094 us (1.94% of Mean)
+Skewness = 0.18, Kurtosis = 1.82, MValue = 2
+-------------------- Histogram --------------------
+[54.295 us ; 55.680 us) | @@@@@
+[55.680 us ; 56.852 us) | @@@@@@@
+[56.852 us ; 58.037 us) | @@@@@
+[58.037 us ; 59.280 us) | @
+---------------------------------------------------
+
+StringBenchmarks.StringCreate: DefaultJob
+Runtime = .NET 5.0.17 (5.0.1722.21314), X64 RyuJIT AVX2; GC = Concurrent Workstation
+Mean = 37.290 us, StdErr = 0.184 us (0.49%), N = 19, StdDev = 0.802 us
+Min = 36.043 us, Q1 = 36.758 us, Median = 37.009 us, Q3 = 37.806 us, Max = 39.019 us
+IQR = 1.048 us, LowerFence = 35.185 us, UpperFence = 39.378 us
+ConfidenceInterval = [36.569 us; 38.011 us] (CI 99.9%), Margin = 0.721 us (1.93% of Mean)
+Skewness = 0.62, Kurtosis = 2.28, MValue = 2
+-------------------- Histogram --------------------
+[35.649 us ; 37.138 us) | @@@@@@@@@@@@
+[37.138 us ; 38.331 us) | @@@@@
+[38.331 us ; 39.243 us) | @@
+---------------------------------------------------
+
+// * Summary *
+
+BenchmarkDotNet v0.13.12, Windows 11 (10.0.22621.3296/22H2/2022Update/SunValley2)
+Intel Core i7-4510U CPU 2.00GHz (Haswell), 1 CPU, 4 logical and 2 physical cores
+.NET SDK 5.0.102
+  [Host]     : .NET 5.0.17 (5.0.1722.21314), X64 RyuJIT AVX2 [AttachedDebugger]
+  DefaultJob : .NET 5.0.17 (5.0.1722.21314), X64 RyuJIT AVX2
+
+
+| Method         | Mean      | Error    | StdDev   | Gen0      | Allocated |
+|--------------- |----------:|---------:|---------:|----------:|----------:|
+| NoBuilder      | 542.62 us | 9.335 us | 8.275 us | 2128.9063 |   4350 KB |
+| Builder        |  82.28 us | 1.451 us | 1.357 us |  183.7158 | 375.78 KB |
+| PooledBuilder  |  67.79 us | 1.353 us | 1.558 us |   85.6934 | 175.28 KB |
+| ArrayPool      |  66.87 us | 1.217 us | 1.016 us |  165.0391 |  337.5 KB |
+| StackAllocated |  56.36 us | 1.094 us | 1.171 us |   82.5195 | 168.75 KB |
+| StringCreate   |  37.29 us | 0.721 us | 0.802 us |   82.5195 | 168.75 KB |
+
+// * Warnings *
+Environment
+  Summary -> Benchmark was executed with attached debugger
+
+// * Hints *
+Outliers
+  StringBenchmarks.NoBuilder: Default -> 1 outlier  was  removed (574.81 us)
+  StringBenchmarks.ArrayPool: Default -> 2 outliers were removed (71.03 us, 72.77 us)
+
+// * Legends *
+  Mean      : Arithmetic mean of all measurements
+  Error     : Half of 99.9% confidence interval
+  StdDev    : Standard deviation of all measurements
+  Gen0      : GC Generation 0 collects per 1000 operations
+  Allocated : Allocated memory per single operation (managed only, inclusive, 1KB = 1024B)
+  1 us      : 1 Microsecond (0.000001 sec)
+
+// * Diagnostic Output - MemoryDiagnoser *
+
+
+// ***** BenchmarkRunner: End *****
+Run time: 00:01:51 (111.89 sec), executed benchmarks: 6
+
+Global total time: 00:02:03 (123.77 sec), executed benchmarks: 6
+// * Artifacts cleanup *
+Artifacts cleanup is finished
+
+Press any key to close this window . . .

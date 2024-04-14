@@ -2,12 +2,12 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Globalization;
-using static AboutString.FormatAsSrrings;
+using static AboutString.FormatAsStrings;
 
 namespace AboutStringTests
 {
     /// <summary>
-    /// Tests for <see cref="FormatAsSrrings"/> class
+    /// Tests for <see cref="FormatAsStrings"/> class
     /// </summary>
     [TestClass]
     public class FormatAsSrringsTests
@@ -45,7 +45,7 @@ namespace AboutStringTests
             decimal price = 2379.18469m;
 
             CultureInfo culture = new CultureInfo(cultureName);
-            string actualFormattedPrice = FormatAsSrrings.FormatPrice(culture, format, price);
+            string actualFormattedPrice = FormatAsStrings.FormatPrice(culture, format, price);
             Assert.AreEqual(expectedFormattedPrice, actualFormattedPrice);
         }
 
@@ -68,7 +68,7 @@ namespace AboutStringTests
         public void FormatPercentTests(string cultureName, double percent, string expectedFormattedPercent)
         {
             CultureInfo culture = new CultureInfo(cultureName);
-            string actualFormattedPercent = FormatAsSrrings.FormatPercent(culture, percent);
+            string actualFormattedPercent = FormatAsStrings.FormatPercent(culture, percent);
             Assert.AreEqual(expectedFormattedPercent, actualFormattedPercent);
         }
 
@@ -77,7 +77,7 @@ namespace AboutStringTests
         [DataRow(15988, 3, "15988")]
         public void FormatIntegerToDecimalDigitsTests(int number, int precision, string expectedFormattedNum)
         {
-            string actualFormattedNum = FormatAsSrrings.FormatIntegerToDecimalDigits(number, precision);
+            string actualFormattedNum = FormatAsStrings.FormatIntegerToDecimalDigits(number, precision);
             Assert.AreEqual(expectedFormattedNum, actualFormattedNum);
         }
 
@@ -89,7 +89,7 @@ namespace AboutStringTests
         [DataRow(-75.237, "75.2 degrees Celsius below zero")]
         public void FormatTemperatureTests(double temperature, string expectedWeather)
         {
-            string actualWeather = FormatAsSrrings.FormatTemperature(temperature);
+            string actualWeather = FormatAsStrings.FormatTemperature(temperature);
             Assert.AreEqual(expectedWeather, actualWeather);
         }
 
@@ -116,7 +116,7 @@ namespace AboutStringTests
         {
             CultureInfo culture = new CultureInfo(cultureName);
             DateTime dateTime = new DateTime(2024, 03, 02, 07, 39, 17);
-            string actualFormattedDateTime = FormatAsSrrings.FormatDateTime(dateTime, culture, pattern);
+            string actualFormattedDateTime = FormatAsStrings.FormatDateTime(dateTime, culture, pattern);
             Assert.AreEqual(expectedFormattedDateTime, actualFormattedDateTime);
         }
 
@@ -127,7 +127,7 @@ namespace AboutStringTests
         public void FormatEnumsTests(string pattern, string expectedFormattedEnum)
         {
             Status status = Status.Yellow;
-            string actualFormattedEnum = FormatAsSrrings.FormatEnums(status, pattern);
+            string actualFormattedEnum = FormatAsStrings.FormatEnums(status, pattern);
             Assert.AreEqual(expectedFormattedEnum, actualFormattedEnum);
         }
 
@@ -140,7 +140,7 @@ namespace AboutStringTests
         public void FormatGuidsTests(string pattern, string expectedGuid)
         {
             Guid guid = new Guid("12345678-1111-2222-3333-012345678901");
-            string actualGuid = FormatAsSrrings.FormatGuids(guid, pattern);
+            string actualGuid = FormatAsStrings.FormatGuids(guid, pattern);
             Assert.AreEqual(expectedGuid, actualGuid);
         }
     }

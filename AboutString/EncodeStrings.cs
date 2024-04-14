@@ -46,7 +46,7 @@ namespace AboutString
     /// UTF-16 - represents each Unicode code point as a sequence of one or two 16-bit integers
     /// UTF-32 - represents each Unicode code point as a 32-bit integers
     /// </summary>
-    public class EncodingStrings
+    public class EncodeStrings
     {
         public static int GetStringLength(string str)
         {

@@ -6,7 +6,7 @@ namespace AboutString
     /// <summary>
     /// This class represents different operations to parse string into another .NET types
     /// </summary>
-    public class ParsingStrings
+    public class ParseStrings
     {
         public static int ParseToInt32(string input)
         {

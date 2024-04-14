@@ -6,19 +6,19 @@ using System.Globalization;
 namespace AboutStringTests
 {
     /// <summary>
-    /// Tests for <see cref="ParsingStrings"/> class
+    /// Tests for <see cref="ParseStrings"/> class
     /// </summary>
     [TestClass]
-    public class ParsingStringsTests
+    public class ParseStringsTests
     {
         [TestMethod]
         public void ParseIntSuccessfullyTest()
         {
             const string number = "123456";
-            int intNumber = ParsingStrings.ParseToInt32(number);
+            int intNumber = ParseStrings.ParseToInt32(number);
             Assert.AreEqual(123456, intNumber);
 
-            intNumber = ParsingStrings.ParseWithIntParse(number);
+            intNumber = ParseStrings.ParseWithIntParse(number);
             Assert.AreEqual(123456, intNumber);
         }
 
@@ -31,7 +31,7 @@ namespace AboutStringTests
         {
             try
             {
-                int intNumber = ParsingStrings.ParseWithIntParse(input);
+                int intNumber = ParseStrings.ParseWithIntParse(input);
             }
             catch (Exception ex)
             {
@@ -46,7 +46,7 @@ namespace AboutStringTests
         {
             try
             {
-                int intNumber = ParsingStrings.ParseWithIntParse(input);
+                int intNumber = ParseStrings.ParseWithIntParse(input);
             }
             catch (Exception ex)
             {
@@ -61,7 +61,7 @@ namespace AboutStringTests
         {
             try
             {
-                int intNumber = ParsingStrings.ParseWithIntParse(input);
+                int intNumber = ParseStrings.ParseWithIntParse(input);
             }
             catch (Exception ex)
             {
@@ -82,7 +82,7 @@ namespace AboutStringTests
         [DataRow(null, false, 0)]
         public void ParseWithTryParseTest(string input, bool expectedIsSuccesfullyParsed, int expectedNumber)
         {
-            (bool actualIsSuccesfullyParsed, int actualNumber) = ParsingStrings.ParseWithIntTryParse(input);
+            (bool actualIsSuccesfullyParsed, int actualNumber) = ParseStrings.ParseWithIntTryParse(input);
 
             Assert.AreEqual(expectedIsSuccesfullyParsed, actualIsSuccesfullyParsed);
             Assert.AreEqual(expectedNumber, actualNumber);
@@ -101,7 +101,7 @@ namespace AboutStringTests
         [DataRow(null, false, 0)]
         public void ParseWithDoubleTryParseTest(string input, bool expectedIsSuccesfullyParsed, double expectedNumber)
         {
-            (bool actualIsSuccesfullyParsed, double actualNumber) = ParsingStrings.ParseWithDoubleTryParse(input);
+            (bool actualIsSuccesfullyParsed, double actualNumber) = ParseStrings.ParseWithDoubleTryParse(input);
             Assert.AreEqual(expectedIsSuccesfullyParsed, actualIsSuccesfullyParsed);
             Assert.AreEqual(expectedNumber, actualNumber);
         }
@@ -113,7 +113,7 @@ namespace AboutStringTests
         [DataRow("False", false)]
         public void ParseWithBooleanParserTest(string input, bool expectedBool)
         {
-            bool boolValue = ParsingStrings.ParseWithBooleanParser(input);
+            bool boolValue = ParseStrings.ParseWithBooleanParser(input);
             Assert.AreEqual(expectedBool, boolValue);
         }
 
@@ -123,7 +123,7 @@ namespace AboutStringTests
         {
             try
             {
-                bool boolValue = ParsingStrings.ParseWithBooleanParser(input);
+                bool boolValue = ParseStrings.ParseWithBooleanParser(input);
             }
             catch (Exception ex)
             {
@@ -141,7 +141,7 @@ namespace AboutStringTests
         {
             try
             {
-                bool boolValue = ParsingStrings.ParseWithBooleanParser(input);
+                bool boolValue = ParseStrings.ParseWithBooleanParser(input);
             }
             catch (Exception ex)
             {
@@ -162,7 +162,7 @@ namespace AboutStringTests
         [DataRow(" ", false, false)]
         public void ParseWithBooleanTryParseTest(string input, bool expectedIsSuccesfullyParsed, bool expectedBoolean)
         {
-            (bool actualIsSuccesfullyParsed, bool actualBoolean) = ParsingStrings.ParseWithBooleanTryParse(input);
+            (bool actualIsSuccesfullyParsed, bool actualBoolean) = ParseStrings.ParseWithBooleanTryParse(input);
 
             Assert.AreEqual(expectedIsSuccesfullyParsed, actualIsSuccesfullyParsed);
             Assert.AreEqual(expectedBoolean, actualBoolean);
@@ -200,7 +200,7 @@ namespace AboutStringTests
         public void ParseDateAndTimeTryParseTest(string cultureName, string input, bool expectedIsSuccesfullyParsed, string expectedDateTime)
         {
             CultureInfo culture = new CultureInfo(cultureName);
-            (bool actualIsSuccesfullyParsed, DateTime outputDateTime) = ParsingStrings.ParseDateAndTimeTryParse(culture, input);
+            (bool actualIsSuccesfullyParsed, DateTime outputDateTime) = ParseStrings.ParseDateAndTimeTryParse(culture, input);
 
             string actualDateTime = $"{outputDateTime:F}";
             Assert.AreEqual(expectedIsSuccesfullyParsed, actualIsSuccesfullyParsed);
@@ -221,7 +221,7 @@ namespace AboutStringTests
         public void ParseDateTimeOffsetPlusNDaysTest(string input, int daysToAdd, bool expectedIsSuccesfullyParsed, string expectedDateTime)
         {
             CultureInfo culture = new CultureInfo("en-US");
-            (bool actualIsSuccesfullyParsed, DateTimeOffset outputDateTime) = ParsingStrings.ParseDateTimeOffsetPlusNDays(culture, input, daysToAdd);
+            (bool actualIsSuccesfullyParsed, DateTimeOffset outputDateTime) = ParseStrings.ParseDateTimeOffsetPlusNDays(culture, input, daysToAdd);
 
             string actualDateTime = $"{outputDateTime:F}";
             Assert.AreEqual(expectedIsSuccesfullyParsed, actualIsSuccesfullyParsed);
@@ -237,7 +237,7 @@ namespace AboutStringTests
         [DataRow(null, false, DayOfWeek.Sunday)] // Sunday is default in case of failures
         public void ParseWithEnumTryParseTest(string input, bool expectedIsSuccesfullyParsed, DayOfWeek expectedDay)
         {
-            (bool actualIsSuccesfullyParsed, DayOfWeek actualDay) = ParsingStrings.ParseWithEnumTryParse(input);
+            (bool actualIsSuccesfullyParsed, DayOfWeek actualDay) = ParseStrings.ParseWithEnumTryParse(input);
             Assert.AreEqual(expectedIsSuccesfullyParsed, actualIsSuccesfullyParsed);
             Assert.AreEqual(expectedDay, actualDay);
         }
@@ -250,7 +250,7 @@ namespace AboutStringTests
         [DataRow("word", false, '\0')]
         public void ParseWithCharTryParseTest(string input, bool expectedIsSuccesfullyParsed, char expectedCharacter)
         {
-            (bool actualIsSuccesfullyParsed, char actualCharacter) = ParsingStrings.ParseWithCharTryParse(input);
+            (bool actualIsSuccesfullyParsed, char actualCharacter) = ParseStrings.ParseWithCharTryParse(input);
             Assert.AreEqual(expectedIsSuccesfullyParsed, actualIsSuccesfullyParsed);
             Assert.AreEqual(expectedCharacter, actualCharacter);
         }

@@ -13,7 +13,7 @@ namespace AboutString
     /// Culture plays a large part in Format
     /// .Net provides mechanisms to control the format and culture during string Format
     /// </summary>
-    public class FormatAsSrrings
+    public class FormatAsStrings
     {
         public static string FormatPrice(CultureInfo culture, string format, decimal price)
         {
